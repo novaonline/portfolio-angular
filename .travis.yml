@@ -1,27 +1,27 @@
 language: node_js
 node_js:
-  - "8"
+- '8'
 sudo: required
 dist: trusty
-
 addons:
 apt:
   sources:
-    - google-chrome
+  - google-chrome
   packages:
-    - google-chrome-stable
-    - google-chrome-beta
-
+  - google-chrome-stable
+  - google-chrome-beta
 before_install:
-  - export CHROME_BIN=chromium-browser
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-
+- export CHROME_BIN=chromium-browser
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
 before_script:
 - npm install -g @angular/cli
 - npm install -g karma
 - npm install
-
 script:
 - ng build
 - ng test
+deploy:
+  api_key:
+    secure: LJfAYyF3zooUaT5ST6xvnjh+1XR6C0swReYGJSCgSG3AKByw3L1nK5cejJeqYG1BZ2cmw5lf6UwGDZlIClUACklXXdWtCgtC5xbcofXo1lhelwwS2p9Yhj3eXz2K5gHgNEJJNf2gsVxskdrOFvGBC3ETL6DJ1RhtqDhsSImE5K0T1+k/VLfb89898a6aZ3R16PYmVkmbkKjfkeYt0hU6OLWbc2+v0j46r5aTo7p1lptYfiUD539GPFHdS7Gc8t/1uM5Of6zM8Z2/6RTAvJojKGIYO1LjR4un2denasZVuKWfL01CXgx11gPCwEjzEAFuGK+PTrU4wGKD2ap+XGr3kd9u2WCx4QyQz7QhrdLqGR97f+ZYFTbcIqFlmjqZwNk5DPkctA+2mK6B/oSA3B9zgLLJUacMkzhVE1Cim/yLF2MAxSmES+27w159N/D+YgwMJafePGDSuRWQHiniqpIBsjklcx7IsfuUq2ntR/Ho4vQW2fyt/oGNPkFjHbfa4gzXRcR0wm10KpOBv2WCGuEJvDkiNA2sxlobJjjVbypEjF/q51r4kMDH8QltApu2k0b5qnF8b8Wf4bcz4Cab27G1XTVZYpAEaeu2ZW1ztqTNHVRfhhnFZvw8eJc8EaF8LS+fZN70OBCiHsSc8oRC5QW1MxezgYDz8cF0TN5zy75L1tk=
+    app: aqueous-headland-72944
