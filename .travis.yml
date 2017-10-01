@@ -21,8 +21,3 @@ before_script:
 script:
 - ng build
 - karma start --single-run
-deploy:
-  provider: heroku
-  app: aqueous-headland-72944
-  api_key:
-    secure: $HEROKU_AUTH_TOKEN_SECURE
