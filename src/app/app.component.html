@@ -1,38 +1,24 @@
 <div class="container">
   <div class="profile badge">
-    <img src="http://homepage.usask.ca/~eeq488/images/me_outside_cropped.jpg" alt="me out side">
-    <div class="rounded-text top">
-      <span class="char1">M</span>
-      <span class="char2">Y</span>
-      <span class="char3">&nbsp;</span>
-      <span class="char4">N</span>
-      <span class="char5">A</span>
-      <span class="char6">M</span>
-      <span class="char7">E</span>
-      <span class="char8">&nbsp;</span>
-      <span class="char9">I</span>
-      <span class="char10">S</span>
-    </div>
-    <h1 class="rounded-text bottom">
-      <span class="char1">E</span>
-      <span class="char2">M</span>
-      <span class="char3">M</span>
-      <span class="char4">A</span>
-      <span class="char5">N</span>
-      <span class="char6">U</span>
-      <span class="char7">E</span>
-      <span class="char8">L</span>
-      <span class="char9">&nbsp;</span>
-      <span class="char10">Q</span>
-      <span class="char11">U</span>
-      <span class="char12">A</span>
-      <span class="char13">G</span>
-      <span class="char14">R</span>
-      <span class="char15">A</span>
-      <span class="char16">I</span>
-      <span class="char17">N</span>
-      <span class="char18">E</span>
-    </h1>
+    <svg width="300" height="300">
+      <defs>
+        <pattern id="image" patternUnits="userSpaceOnUse" width="250" height="250" x="25" y="25">
+            <image xlink:href="http://homepage.usask.ca/~eeq488/images/me_outside_cropped.jpg" x="0" y="0" width="250" height="250" />
+        </pattern>
+       <path id="circlePathTop" d="M 50 115 A 50 50 0 1 1 250 115"  />
+       <path id="circlePathBottom" d="M 20 170 A 50 50 0 1 0 280 170 " />
+      </defs>
+      <circle id='backCircle' cx="150" cy="150" r="125" fill="white" />
+      <circle id='imageCircle' cx="150" cy="150" r="120" fill="url(#image)" />
+      <use xlink:href="#circlePathTop" stroke="red" stroke-linecap="round" stroke-dasharray="5,10,5" fill="none" />
+      <use xlink:href="#circlePathBottom" stroke="red" stroke-linecap="round" stroke-dasharray="5,10,5" fill="none" />
+      <text fill="#fff" letter-spacing="5">
+          <textPath  startOffset="110px" xlink:href="#circlePathTop">MY NAME IS</textPath>
+      </text>
+      <text fill="#fff" letter-spacing="5">
+          <textPath  startOffset="34%" xlink:href="#circlePathBottom">Emmanuel Quagraine</textPath>
+      </text>
+    </svg>
   </div>
   <div class="main">
     <!-- <router-outlet></router-outlet> -->

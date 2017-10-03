@@ -5,42 +5,9 @@
 }
 
 .profile.badge {
-    padding-top: 4rem;
-    margin: 0 auto;
-    width: 200px;
-    position: relative;
-    & img {
-        width: 200px;
-        border-radius: 50%;
-        padding: .25rem;
-        background-color: #fff;
-        border: 1px solid #ddd;
-        -webkit-transition: all .2s ease-in-out;
-        -o-transition: all .2s ease-in-out;
-        transition: all .2s ease-in-out;
-        max-width: 100%;
-        height: auto;
-        position: absolute;
-        text-align: center;
-    }
-}
-
-.profile.compact {
-    text-align: left;
-    margin-top: .50rem;
-    position: relative;
-    & img {
-        width: 5%;
-        padding: 0.0625rem;
-        position: absolute;
-    }
-    & h1 {
-        margin-top: 0;
-        display: inline-block;
-        position: absolute;
-        left: 70px;
-        top: .50rem;
-    }
+  width: 300px;
+  margin: 0 auto;
+  padding-top: 5rem;
 }
 
 // Text Area
@@ -58,54 +25,7 @@
     @include transform(rotate(#{$deg}deg));
 }
 
-@mixin rotated-text($num-letters: 100, $angle-span: 180deg, $angle-offset: 0deg, $direction: 1) {
-    $angle-per-char: $angle-span / $num-letters;
-    @if $direction>=0 {
-        @for $i from 1 through $num-letters {
-            & .char#{$i} {
-                @include transform(rotate($angle-offset + $angle-per-char * $i))
-            }
-        }
-    }
-    @else {
-        @for $i from 1 through $num-letters {
-            & .char#{$i} {
-                @include transform(rotate($angle-offset - $angle-per-char * $i))
-            }
-        }
-    }
-}
-
 .text-center {
     text-align: center;
 }
 
-.rounded-text {
-    position: absolute;
-    width: 200px;
-    left: 90px;
-    &.top {
-        font-size: 1.1rem;
-        & span {
-            height: 125px;
-            position: absolute;
-            width: 20px;
-            left: 0;
-            top: -30px;
-            transform-origin: bottom center;
-        }
-        @include rotated-text(10, 135deg, -75deg);
-    }
-    &.bottom {
-        font-size: 1.5rem;
-        & span {
-            height: 125px;
-            position: absolute;
-            width: 20px;
-            left: 0;
-            top: -30px;
-            transform-origin: bottom center;
-        }
-        @include rotated-text(18, 180deg, 85deg, -1)
-    }
-}
