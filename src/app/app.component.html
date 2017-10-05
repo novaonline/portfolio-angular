@@ -1,26 +1,6 @@
+<div class="masked"></div>
 <div class="container">
-  <div class="profile badge">
-    <svg width="300" height="300">
-      <defs>
-        <pattern id="image" patternUnits="userSpaceOnUse" width="250" height="250" x="25" y="25">
-            <image xlink:href="http://homepage.usask.ca/~eeq488/images/me_outside_cropped.jpg" x="0" y="0" width="250" height="250" />
-        </pattern>
-       <path id="circlePathTop" d="M 50 115 A 50 50 0 1 1 250 115"  />
-       <path id="circlePathBottom" d="M 20 170 A 50 50 0 1 0 280 170 " />
-      </defs>
-      <circle id='backCircle' cx="150" cy="150" r="125" fill="white" />
-      <circle id='imageCircle' cx="150" cy="150" r="120" fill="url(#image)" />
-      <use xlink:href="#circlePathTop" stroke="red" stroke-linecap="round" stroke-dasharray="5,10,5" fill="none" />
-      <use xlink:href="#circlePathBottom" stroke="red" stroke-linecap="round" stroke-dasharray="5,10,5" fill="none" />
-      <text fill="#fff" letter-spacing="5">
-          <textPath  startOffset="110px" xlink:href="#circlePathTop">MY NAME IS</textPath>
-      </text>
-      <text fill="#fff" letter-spacing="5">
-          <textPath  startOffset="34%" xlink:href="#circlePathBottom">Emmanuel Quagraine</textPath>
-      </text>
-    </svg>
-  </div>
-  <div class="main">
-    <!-- <router-outlet></router-outlet> -->
-  </div>
+  <app-card></app-card>
+  <app-visual-status></app-visual-status>
+  <app-navigation></app-navigation>
 </div>

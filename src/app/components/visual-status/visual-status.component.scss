@@ -1,0 +1,154 @@
+$size-width: 300px;
+$top-buffer: 4.8rem;
+.profile.logo {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    width: $size-width;
+    margin: 0 auto;
+    transition: all 400ms ease; // animation: breathing 30s ease infinite;
+    // animation-delay: 1s;
+    transform-origin: 50% center;
+    & svg {
+        margin-top: $top-buffer;
+        outline: none;
+        cursor: pointer;
+    }
+    &.idle {
+        width: $size-width/2;
+        padding-top: 0;
+        transition: all 400ms ease;
+        & #profileText {
+            fill-opacity: 0;
+            transition: all 400ms ease;
+        }
+    }
+    &.loading {
+        width: $size-width;
+        padding-top: 4rem;
+        transition: all 400ms ease;
+    }
+    &:hover {
+        transform: translateX(-50%) scale(1.1);
+    }
+    & #imageCircle {
+        animation: breathing-img-circle 20000ms ease infinite;
+        animation-delay: 0;
+        transform-origin: center center;
+    }
+    & #backCircle {
+        animation: breathing-back-circle 20000ms ease infinite;
+        animation-delay: 0;
+        transform-origin: center center;
+    }
+    & #profileText {
+        animation: breathing-profile-text 20000ms ease infinite;
+        animation-delay: 0;
+        transform-origin: center center;
+    }
+    &.compact {
+        transition: all 400ms ease;
+        width: 100px;
+        margin: 0px 10px;
+        padding-top: .5rem;
+        & #profileText {
+            opacity: 0;
+        }
+    }
+    & #profileText {
+        opacity: 1;
+    }
+}
+
+// Text Area
+// generic transform
+@mixin transform($transforms) {
+    -moz-transform: $transforms;
+    -o-transform: $transforms;
+    -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+}
+
+// rotate
+@mixin rotate ($deg) {
+    @include transform(rotate(#{$deg}deg));
+}
+
+.text-center {
+    text-align: center;
+}
+
+@keyframes breathing-img-circle {
+    0% {
+        -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+    25% {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+    }
+    60% {
+        -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+    100% {
+        -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+}
+
+@keyframes breathing-back-circle {
+    0% {
+        -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+    13% {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+    }
+    23% {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+    }
+    60% {
+        -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+    100% {
+        -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+}
+
+@keyframes breathing-profile-text {
+    0% {
+        -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+    13% {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+    }
+    80% {
+        -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+    100% {
+        -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+}

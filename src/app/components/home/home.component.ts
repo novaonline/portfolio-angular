@@ -1,5 +1,6 @@
+import { VisualStatusService } from './../../services/visual-status.service';
 import { Component, OnInit } from '@angular/core';
-
+import { trigger, state, style, animate, transition } from '@angular/animations';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
+
   }
 
 }

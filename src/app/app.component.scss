@@ -1,31 +1,17 @@
-.container {
+
+
+.masked {
     background: rgba(0, 0, 0, .80);
     height: 100%;
+    width: 100%;
     color: white;
+    position: fixed;
+    z-index: -1;
 }
 
-.profile.badge {
-  width: 300px;
-  margin: 0 auto;
-  padding-top: 5rem;
+.container {
+    color: white;
+    width: 100%;
 }
 
-// Text Area
-// generic transform
-@mixin transform($transforms) {
-    -moz-transform: $transforms;
-    -o-transform: $transforms;
-    -ms-transform: $transforms;
-    -webkit-transform: $transforms;
-    transform: $transforms;
-}
-
-// rotate
-@mixin rotate ($deg) {
-    @include transform(rotate(#{$deg}deg));
-}
-
-.text-center {
-    text-align: center;
-}
 

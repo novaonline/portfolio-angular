@@ -1,0 +1,49 @@
+@mixin clearfix {
+    &:after {
+        display: table;
+        clear: both;
+        content: '';
+    }
+}
+
+.five-item-columns .social-btn {
+    float: left;
+    width: 20%;
+    margin-bottom: 20px;
+}
+
+.five-item-columns {
+    @include clearfix();
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    &:after {
+        content: "";
+        position: absolute;
+        width: 14%;
+        height: 1px;
+        bottom: -0.4rem;
+        left: 50%;
+        transform: translateX(-50%);
+        border-bottom: 0.2rem solid lightgray;
+        transition: all 400ms ease;
+    }
+}
+
+.home-container:hover h2:after {
+  width: 30%;
+}
+
+.social-btn {
+    text-align: center;
+    cursor: pointer;
+    & img {
+        height: 3.2rem;
+        width: auto;
+    }
+}
