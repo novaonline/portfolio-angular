@@ -1,4 +1,4 @@
-import { VisualStatusService } from './services/visual-status.service';
+import { VisualStatusService } from './services/visual-status-service/visual-status.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
