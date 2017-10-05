@@ -29,4 +29,8 @@ h2 {
         height: 3.2rem;
         width: auto;
     }
+    transition: all 400ms ease;
+    &:hover {
+      transform: scale(1.2);
+    }
 }

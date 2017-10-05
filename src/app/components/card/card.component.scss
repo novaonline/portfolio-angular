@@ -11,6 +11,12 @@ $container-min-width: 20rem;
     transform: translateX(-50%)
 }
 
+@media screen and (max-device-width: 640px) {
+  .main-container {
+    top: 14rem;
+  }
+}
+
 .main-content {
     width: 85%;
     background: white;

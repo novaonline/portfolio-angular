@@ -32,8 +32,9 @@ export class CardComponent implements OnInit {
 
   constructor(private _visualStateService: VisualStatusService, private _router: Router) {
     this.visibleState = 'hidden';
-    this._router.events.filter(e => e instanceof NavigationEnd).pairwise().subscribe( e => {
+    this._router.events.filter(e => e instanceof NavigationEnd).pairwise().subscribe(e => {
       // not the start
+      console.log(e);
       this._visualStateService.setStateAsLoading();
       // can fetch previous route here
     });

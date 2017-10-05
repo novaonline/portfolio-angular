@@ -1,5 +1,5 @@
 nav {
-  position: relative;
+    position: relative;
     & ul {
         list-style-type: none;
         display: inline-block;
@@ -15,7 +15,7 @@ nav {
             display: inline-block;
             margin: 0 auto;
             & a {
-                width: 5rem;
+                width: 5.6rem;
                 padding: 1rem 0.2rem;
                 display: block;
                 text-align: center;
@@ -24,14 +24,24 @@ nav {
                 white-space: nowrap;
                 overflow: hidden;
                 text-decoration: none;
+                transition: all 400ms ease;
                 &:focus {
                     text-decoration: none;
+                    font-weight: 500;
+                    transform: scale(1.05);
                 }
                 &:visited {
                     text-decoration: none;
                 }
                 &:hover {
                     text-decoration: none;
+                    font-weight: 500;
+                    transform: scale(1.05);
+                }
+                &.active {
+                    text-decoration: none;
+                    font-weight: 500;
+                    transform: scale(1.05);
                 }
             }
         }
