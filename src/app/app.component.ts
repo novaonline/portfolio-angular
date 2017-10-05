@@ -1,4 +1,3 @@
-import { VisualStatusService } from './services/visual-status.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,12 +9,8 @@ export class AppComponent implements OnInit {
 
   title = `Hello, I'm Emmanuel Quagraine`;
 
-  constructor(private _visualStateService: VisualStatusService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    // fake loading
-    setTimeout(() => {
-      this._visualStateService.setStateAsIdle();
-    }, 5000)
   }
 }

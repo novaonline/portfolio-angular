@@ -33,10 +33,10 @@ export class CardComponent implements OnInit {
       if (evt instanceof NavigationStart) {
         this._visualStateService.setStateAsLoading();
       }
-      if (evt instanceof NavigationEnd) {
-        setTimeout(()=> this._visualStateService.setStateAsIdle(), 1000) // give it at lease one second to animate
-        // todo: add text that says transitioning (not loading)
-      }
+      // if (evt instanceof NavigationEnd) {
+      //   setTimeout(()=> this._visualStateService.setStateAsIdle(), 1000) // give it at lease one second to animate
+      //   // todo: add text that says transitioning (not loading)
+      // }
     })
   }
 

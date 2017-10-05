@@ -1,3 +1,4 @@
+import { ContentService } from './../../services/content-service/content.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _contentService: ContentService) { }
 
   ngOnInit() {
+    this._contentService.getContact().subscribe(contactContent => {
+      console.log(contactContent);
+    });
   }
 
 }

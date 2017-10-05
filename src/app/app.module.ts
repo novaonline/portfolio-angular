@@ -1,6 +1,8 @@
 import { VisualStatusService } from './services/visual-status-service/visual-status.service';
+import { ContentService } from './services/content-service/content.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -42,8 +44,9 @@ const routes: Routes = [
     BrowserModule,
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
+    HttpClientModule,
   ],
-  providers: [VisualStatusService],
+  providers: [VisualStatusService, ContentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

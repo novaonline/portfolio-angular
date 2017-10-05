@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
-import { VisualStatusState } from '../models/enums/visual-status-state.enum';
 import { Subject, Observable } from 'rxjs';
+import { VisualStatusState } from './../../models/enums/visual-status-state.enum';
 
 @Injectable()
 export class VisualStatusService {
 
   private _state$: Subject<VisualStatusState>;
-  private _stateReady$: Subject<boolean>;
 
   constructor() {
     this._state$ = new Subject<VisualStatusState>();

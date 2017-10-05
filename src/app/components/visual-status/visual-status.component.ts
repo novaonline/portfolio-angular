@@ -1,4 +1,4 @@
-import { VisualStatusService } from './../../services/visual-status.service';
+import { VisualStatusService } from './../../services/visual-status-service/visual-status.service';
 import { Component, OnInit } from '@angular/core';
 import { VisualStatusState } from '../../models/enums/visual-status-state.enum';
 
