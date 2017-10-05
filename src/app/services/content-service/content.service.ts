@@ -1,10 +1,15 @@
 import { Content } from './../../models/content/content';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpEvent, HttpInterceptor, HttpHandler, HttpRequest } from '@angular/common/http';
 
 @Injectable()
-export class ContentService {
+export class ContentService /*implements HttpInterceptor*/{
+
+  // intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+  //   const crossOriginReq = req.clone({headers: req.headers.set('Access-Control-Allow-Origin', 'http://localhost:3000')});
+  //   return next.handle(crossOriginReq);
+  // }
 
   private _baseUrl: string = `http://equagraineapi.azurewebsites.net/api/`;
 

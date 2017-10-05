@@ -1,5 +1,7 @@
 <div class="main-container">
   <div class="main-content" [@visibleState]="visibleState">
-    <router-outlet></router-outlet>
+    <div class="scroll-on-overflow" #scrollableContent>
+        <router-outlet></router-outlet>
+    </div>
   </div>
 </div>

@@ -1,25 +1,38 @@
 $container-width: 45rem;
 $container-min-width: 20rem;
-
 .main-container {
-  width: 100%;
-  position: absolute;
-  top: 9rem;
-  max-width: $container-width;
-  margin: 0 auto;
-  min-width: $container-min-width;
-  left: 50%;
-  transform: translateX(-50%)
+    width: 100%;
+    position: absolute;
+    top: 9rem;
+    max-width: $container-width;
+    margin: 0 auto;
+    min-width: $container-min-width;
+    left: 50%;
+    transform: translateX(-50%)
 }
+
 .main-content {
-  width: 85%;
-  background: white;
-  border: 1px solid gray;
-  margin: 0 auto;
-  border-radius: .5rem;
-  color: black;
-  padding: 10px 20px;
-  box-shadow: 0 19px 38px;
-  padding-top: 3rem;
-  visibility: hidden;
+    width: 85%;
+    background: white;
+    border: 1px solid gray;
+    margin: 0 auto;
+    border-radius: .5rem;
+    color: black;
+    box-shadow: 0 19px 38px;
+    visibility: hidden;
+    height: 70vh;
+    overflow-y: hidden;
+    padding-top: 10px;
+    padding-bottom: 4rem;
+    transform-origin: center 40px;
+
+}
+
+.scroll-on-overflow {
+    margin-top: 4rem;
+    position: relative;
+    height: 90%;
+    overflow-y: scroll;
+    padding-left: 20px;
+    padding-right: 20px
 }

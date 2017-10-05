@@ -1,3 +1,4 @@
+import { VisualStatusService } from './../../services/visual-status-service/visual-status.service';
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 @Component({
@@ -7,11 +8,11 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 })
 export class HomeComponent implements OnInit {
 
-  constructor() {
+  constructor(private _visualStatusService: VisualStatusService) {
   }
 
   ngOnInit() {
-
+    setTimeout(()=>this._visualStatusService.setStateAsIdle(), 2000);
   }
 
 }

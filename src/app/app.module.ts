@@ -16,14 +16,12 @@ import { InterestComponent } from './components/interest/interest.component';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { CardComponent } from './components/card/card.component';
+import { ContentComponent } from './components/content/content.component';
+import { VisualResolvePipe } from './pipes/visual-resolve.pipe';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
-  { path: "education", component: EducationComponent },
-  { path: "interest", component: InterestComponent },
-  { path: "projects", component: ProjectsComponent },
-  { path: "experience", component: ExperienceComponent },
-  { path: "contact", component: ContactComponent },
+  { path: ":content", component: ContentComponent },
   { path: "**", component: HomeComponent }
 ]
 
@@ -38,7 +36,9 @@ const routes: Routes = [
     InterestComponent,
     ExperienceComponent,
     ContactComponent,
-    CardComponent
+    CardComponent,
+    ContentComponent,
+    VisualResolvePipe
   ],
   imports: [
     BrowserModule,

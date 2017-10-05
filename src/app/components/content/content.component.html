@@ -1,0 +1,7 @@
+<div *ngIf="content$ | async | visualResolve; let content">
+  <h2>{{content.info.header}}</h2>
+  <div *ngFor="let section of content.sections">
+    <h3>{{section.info.meta}}</h3>
+    <div [innerHTML]="section.info.body"></div>
+  </div>
+</div>

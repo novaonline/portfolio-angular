@@ -15,6 +15,7 @@ export class EducationComponent implements OnInit {
   ngOnInit() {
     this._contentService.getEducation().subscribe(educationContent => {
       console.log(educationContent);
+      // load the content here
       this._visualService.setStateAsIdle();
     },
       (err: HttpErrorResponse) => {

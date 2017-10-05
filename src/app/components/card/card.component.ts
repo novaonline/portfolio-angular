@@ -1,6 +1,6 @@
 import { Router, RoutesRecognized, NavigationEnd, NavigationStart } from '@angular/router';
 import { VisualStatusService } from './../../services/visual-status-service/visual-status.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { VisualStatusState } from '../../models/enums/visual-status-state.enum';
 
@@ -27,11 +27,16 @@ export class CardComponent implements OnInit {
 
   public visibleState: string;
 
+  @ViewChild("scrollableContent")
+  public contentRef: ElementRef
+
   constructor(private _visualStateService: VisualStatusService, private _router: Router) {
     this.visibleState = 'hidden';
     this._router.events.subscribe(evt => {
       if (evt instanceof NavigationStart) {
         this._visualStateService.setStateAsLoading();
+        // lazy attempt at hiding the scroll movement when transitioning
+        setTimeout(() => this.contentRef.nativeElement.scrollTo(0, 0), 300);
       }
       // if (evt instanceof NavigationEnd) {
       //   setTimeout(()=> this._visualStateService.setStateAsIdle(), 1000) // give it at lease one second to animate
