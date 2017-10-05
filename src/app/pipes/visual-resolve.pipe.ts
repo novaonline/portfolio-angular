@@ -11,7 +11,7 @@ export class VisualResolvePipe implements PipeTransform {
   }
   transform(value: any, args?: any): any {
     // delay by 400ms to give transition time to animate
-    setTimeout(()=>this._visualService.setStateAsIdle(),400)
+    setTimeout(() => this._visualService.setStateAsIdle(), 400)
     return value;
   }
 

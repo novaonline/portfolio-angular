@@ -1,4 +1,4 @@
-<div  [ngClass]="['profile','logo',convertStateToClassClass(currentState)]">
+<div [ngClass]="['profile','logo',convertStateToClassClass(currentState)]">
   <svg routerLink="" title="back to home" viewBox="0 0 300 300" width="100%" height="100%">
     <defs>
       <pattern id="profileImg" patternUnits="userSpaceOnUse" width="250" height="250" x="25" y="25">
@@ -9,10 +9,10 @@
     </defs>
     <g id="profileText">
       <text fill="#fff" letter-spacing="5">
-        <textPath path="" startOffset="70px" xlink:href="#circlePathTop">GREETINGS, MY NAME IS</textPath>
+        <textPath path="" startOffset="70px" xlink:href="#circlePathTop">{{ getTopTextByCurrentState(currentState) }}</textPath>
       </text>
       <text fill="#fff" letter-spacing="5">
-        <textPath startOffset="90px" xlink:href="#circlePathBottom">EMMANUEL QUAGRAINE</textPath>
+        <textPath startOffset="90px" xlink:href="#circlePathBottom">{{getBottomTextByCurrentState(currentState)}}</textPath>
       </text>
     </g>
     <circle id='backCircle' cx="150" cy="150" r="125" fill="white" />

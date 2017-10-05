@@ -32,16 +32,17 @@ export class CardComponent implements OnInit {
 
   constructor(private _visualStateService: VisualStatusService, private _router: Router) {
     this.visibleState = 'hidden';
+    this._router.events.filter(e => e instanceof NavigationEnd).pairwise().subscribe( e => {
+      // not the start
+      this._visualStateService.setStateAsLoading();
+      // can fetch previous route here
+    });
     this._router.events.subscribe(evt => {
       if (evt instanceof NavigationStart) {
-        this._visualStateService.setStateAsLoading();
+        this._visualStateService.setStateAsIntro();
         // lazy attempt at hiding the scroll movement when transitioning
-        setTimeout(() => this.contentRef.nativeElement.scrollTo(0, 0), 300);
+        setTimeout(() => this.contentRef.nativeElement.scrollTo(0, 0), 400);
       }
-      // if (evt instanceof NavigationEnd) {
-      //   setTimeout(()=> this._visualStateService.setStateAsIdle(), 1000) // give it at lease one second to animate
-      //   // todo: add text that says transitioning (not loading)
-      // }
     })
   }
 

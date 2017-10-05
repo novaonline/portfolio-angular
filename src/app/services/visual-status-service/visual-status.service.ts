@@ -50,4 +50,14 @@ export class VisualStatusService {
     this.setState(VisualStatusState.IDLE);
   }
 
+  /**
+   * Alias for setState where VisualStatusState is INTRO
+   *
+   * @memberof VisualStatusService
+   */
+  public setStateAsIntro(): void {
+    this.setState(VisualStatusState.INTRO);
+  }
+
+
 }

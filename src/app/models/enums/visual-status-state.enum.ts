@@ -3,5 +3,6 @@ export enum VisualStatusState {
   LOADING = 2,
   SUCCESS = 3,
   FAILURE = 4,
-  CRITICAL = 5
+  CRITICAL = 5,
+  INTRO = 6,
 }
