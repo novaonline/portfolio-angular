@@ -1,6 +1,6 @@
 import { Router, RoutesRecognized, NavigationEnd, NavigationStart } from '@angular/router';
 import { VisualStatusService } from './../../services/visual-status-service/visual-status.service';
-import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, HostListener } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { VisualStatusState } from '../../models/enums/visual-status-state.enum';
 
@@ -29,6 +29,9 @@ export class CardComponent implements OnInit {
 
   @ViewChild("scrollableContent")
   public contentRef: ElementRef
+
+  @ViewChild("mainContent")
+  public mainContentRef: ElementRef
 
   constructor(private _visualStateService: VisualStatusService, private _router: Router) {
     this.visibleState = 'hidden';
@@ -70,6 +73,14 @@ export class CardComponent implements OnInit {
       // }, 5000);
     }, 5000);
 
+
   }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    // TODO refactor this
+    var workingHeight = event.target.innerHeight;
+    this.mainContentRef.nativeElement.style.height = (workingHeight - 150) + 'px';
+
+  }
 }
