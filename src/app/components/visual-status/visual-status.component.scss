@@ -1,14 +1,30 @@
 $size-width: 300px;
 $top-buffer: 4.8rem;
+@mixin transform($transforms) {
+    -moz-transform: $transforms;
+    -o-transform: $transforms;
+    -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+}
+
+@mixin transform-origin($transforms) {
+    -moz-transform-origin: $transforms;
+    -o-transform-origin: $transforms;
+    -ms-transform-origin: $transforms;
+    -webkit-transform-origin: $transforms;
+    transform-origin: $transforms;
+}
+
 .profile.logo {
     position: fixed;
     left: 50%;
-    transform: translateX(-50%);
+    @include transform(translateX(-50%));
     width: $size-width;
     margin: 0 auto;
     transition: all 400ms ease; // animation: breathing 30s ease infinite;
     // animation-delay: 1s;
-    transform-origin: 50% center;
+    @include transform-origin(50% center);
     & svg {
         margin-top: $top-buffer;
         outline: none;
@@ -39,17 +55,17 @@ $top-buffer: 4.8rem;
     & #imageCircle {
         animation: breathing-img-circle 20000ms ease infinite;
         animation-delay: 0;
-        transform-origin: center center;
+        @include transform-origin(center center);
     }
     & #backCircle {
         animation: breathing-back-circle 20000ms ease infinite;
         animation-delay: 0;
-        transform-origin: center center;
+        @include transform-origin(center center);
     }
     & #profileText {
         animation: breathing-profile-text 20000ms ease infinite;
         animation-delay: 0;
-        transform-origin: center center;
+        @include transform-origin(center center);
     }
     &.compact {
         transition: all 400ms ease;
@@ -66,30 +82,23 @@ $top-buffer: 4.8rem;
 }
 
 @media (max-device-width: 640px) {
-  .profile.logo svg {
-    margin-top: 9.8rem;
-  }
+    .profile.logo svg {
+        margin-top: 9.8rem;
+    }
 }
 
 #homeText {
-  visibility: hidden;
-  fill-opacity: 0;
+    visibility: hidden;
+    fill-opacity: 0;
 }
+
 .profile.logo.idle:hover #homeText {
-  visibility: visible;
-  fill-opacity: 1;
+    visibility: visible;
+    fill-opacity: 1;
 }
 
 // Text Area
 // generic transform
-@mixin transform($transforms) {
-    -moz-transform: $transforms;
-    -o-transform: $transforms;
-    -ms-transform: $transforms;
-    -webkit-transform: $transforms;
-    transform: $transforms;
-}
-
 // rotate
 @mixin rotate ($deg) {
     @include transform(rotate(#{$deg}deg));

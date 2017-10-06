@@ -32,5 +32,7 @@ h2 {
     transition: all 400ms ease;
     &:hover {
       transform: scale(1.2);
+      -moz-transform:  scale(1.2);
+      -ms-transform: scale(1.2);
     }
 }

@@ -1,20 +1,21 @@
-$container-width: 45rem;
+$container-width: 60rem;
 $container-min-width: 20rem;
 .main-container {
-    width: 100%;
-    position: absolute;
+    position: fixed;
     top: 9rem;
     max-width: $container-width;
     margin: 0 auto;
-    min-width: $container-min-width;
     left: 50%;
-    transform: translateX(-50%)
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    width: 100%;
 }
 
 @media (max-device-width: 640px) {
-  .main-container {
-    top: 14rem;
-  }
+    .main-container {
+        top: 14rem;
+    }
 }
 
 .main-content {
@@ -31,7 +32,8 @@ $container-min-width: 20rem;
     padding-top: 10px;
     padding-bottom: 4rem;
     transform-origin: center 40px;
-
+    -webkit-transform-origin: center 40px;
+    -ms-transform-origin: center 40px;
 }
 
 .scroll-on-overflow {
