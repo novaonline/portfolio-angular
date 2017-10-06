@@ -11,7 +11,7 @@ $container-min-width: 20rem;
     transform: translateX(-50%)
 }
 
-@media screen and (max-device-width: 640px) {
+@media (max-device-width: 640px) {
   .main-container {
     top: 14rem;
   }

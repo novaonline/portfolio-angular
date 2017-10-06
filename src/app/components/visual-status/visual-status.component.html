@@ -8,13 +8,14 @@
       <path id="circlePathBottom" d="M 10 150 A 50 50 0 1 0 290 150 " />
     </defs>
     <g id="profileText">
-      <text fill="#fff" letter-spacing="5">
+      <!-- https://stackoverflow.com/questions/28644626/svg-letter-spacing-also-for-the-firefox -->
+      <text fill="#fff" letter-spacing="5" textLength="300">
         <textPath path="" startOffset="70px" xlink:href="#circlePathTop">{{ getTopTextByCurrentState(currentState) }}</textPath>
       </text>
-      <text fill="#fff" letter-spacing="5" id="homeText" >
+      <text fill="#fff" letter-spacing="5" id="homeText" textLength="160" >
           <textPath path="" startOffset="130px" xlink:href="#circlePathTop">Back to Home</textPath>
         </text>
-      <text fill="#fff" letter-spacing="5">
+      <text fill="#fff" letter-spacing="5" textLength="300">
         <textPath startOffset="90px" xlink:href="#circlePathBottom">{{getBottomTextByCurrentState(currentState)}}</textPath>
       </text>
     </g>
