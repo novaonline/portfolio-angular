@@ -39,7 +39,7 @@ export class ContentComponent implements OnInit {
       });
       this.content$.subscribe(c => {
         console.log(c);
-        // this._visualService.setStateAsIdle();
+        setTimeout(() => this._visualService.setStateAsIdle(), 400)
       });
   }
 

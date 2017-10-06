@@ -42,7 +42,9 @@ export class CardComponent implements OnInit {
       if (evt instanceof NavigationStart) {
         this._visualStateService.setStateAsIntro();
         // lazy attempt at hiding the scroll movement when transitioning
-        setTimeout(() => this.contentRef.nativeElement.scrollTo(0, 0), 400);
+        setTimeout(() => {
+          this.contentRef.nativeElement.scrollTo(0, 0)
+        }, 400);
       }
     })
   }

@@ -79,7 +79,7 @@ export class VisualStatusComponent implements OnInit {
   getBottomTextByCurrentState(state: VisualStatusState): string {
     switch (state) {
       case VisualStatusState.INTRO:
-        return this._defaultTopText;
+        return this._defaultBottomText;
       default:
         return "Running on a free plan";
     }
