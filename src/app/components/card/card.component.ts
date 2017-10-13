@@ -76,11 +76,11 @@ export class CardComponent implements OnInit {
 
   }
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event) {
-    // TODO refactor this
-    var workingHeight = event.target.innerHeight;
-    this.mainContentRef.nativeElement.style.height = (workingHeight - 150) + 'px';
+  // @HostListener('window:resize', ['$event'])
+  // onResize(event) {
+  //   // TODO refactor this
+  //   var workingHeight = event.target.innerHeight;
+  //   this.mainContentRef.nativeElement.style.height = (workingHeight - 150) + 'px';
 
-  }
+  // }
 }

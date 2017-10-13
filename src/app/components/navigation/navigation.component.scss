@@ -1,17 +1,14 @@
+app-navigation {
+  display: block;
+}
 nav {
-    position: relative;
+  position: relative;
     & ul {
         list-style-type: none;
-        display: inline-block;
         margin: 0;
         padding: 0;
-        width: 75%;
-        position: fixed;
+        position: relative;
         text-align: center;
-        left: 50%;
-        transform: translateX(-50%);
-        -moz-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
         & li {
             display: inline-block;
             margin: 0 auto;
