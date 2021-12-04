@@ -1,0 +1,9 @@
+<div *ngFor="let exp of experience">
+    <h2>{{ exp.info.title }}</h2>
+    <p><b>Type:</b> {{ exp.type }}</p>
+    <div *ngFor="let section of exp.info.sections">
+        <h3>{{ section.info.meta }}</h3>
+        <p>{{ section.info.body }}</p>
+    </div>
+</div>
+<p>experience works!</p>

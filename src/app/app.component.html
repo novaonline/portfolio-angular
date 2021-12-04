@@ -1,6 +1,65 @@
-<div class="masked"></div>
-<div class="container">
-  <app-navigation></app-navigation>
-  <app-card></app-card>
-  <!-- might have to refactor this and divide them. Initially wanted it to be scrollable, but dont anymore -->
+<header>
+  <div *ngIf="id_token">
+    <div style="word-break: break-all;">
+      <p *ngIf="!givenName">Welcome!</p>
+      <p *ngIf="givenName">Welcome, {{ givenName }} {{ familyName }}!</p>
+    </div>
+  </div>
+  <div>
+    <p>
+      <button *ngIf="!id_token" class="btn btn-default" (click)="loginCode()">Login</button>
+      <button *ngIf="id_token" class="btn btn-default" (click)="logout()">Logout</button>
+    </p>
+  </div>
+
+</header>
+<div id="main">
+  <article class="scroll-on-overflow">
+    <router-outlet></router-outlet>
+  </article>
+  <nav class="navbar navbar-default">
+    <ul class="nav navbar-nav">
+      <li><a [routerLink]="['/home']">Home</a></li>
+    </ul>
+    <ul class="nav navbar-nav">
+      <li><a [routerLink]="['/experience']">Experience</a></li>
+    </ul>
+    <ul class="nav navbar-nav">
+      <li><a [routerLink]="['/interests']">Interests</a></li>
+    </ul>
+    <ul class="nav navbar-nav">
+      <li><a [routerLink]="['/projects']">Projects</a></li>
+    </ul>
+    <ul class="nav navbar-nav">
+      <li><a [routerLink]="['/contact']">Contact</a></li>
+    </ul>
+  </nav>
+  <aside>
+    <div>
+      <p>
+        <button (click)="refresh()">Refresh</button>
+        <!-- TODO: Only show this if logged in novaonline. This will navigate to experience with a form to add a new experience -->
+        <button>Add</button>
+      </p>
+    </div>
+  </aside>
 </div>
+<footer>
+  <div class="five-item-columns three-item-columns-when-small">
+    <a href="https://github.com/novaonline" role="button" class="social-btn github">
+      <img src="/assets/github_alt.svg" alt="github" />
+    </a>
+    <a href="https://linkedin.com/in/equagrainejr/" role="button" class="social-btn linkedin">
+      <img src="/assets/linkedin.svg" alt="linkedin" />
+    </a>
+    <a href="https://www.codewars.com/users/novaonline" role="button" class="social-btn codewars">
+      <img src="/assets/codewars.svg" alt="codewars" />
+    </a>
+    <a href="https://codepen.io/novaonline/" role="button" class="social-btn codepen">
+      <img src="/assets/codepen.svg" alt="codepen" />
+    </a>
+    <a href="https://soundcloud.com/novaonline" role="button" class="social-btn soundcloud">
+      <img src="/assets/soundcloud.svg" alt="soundcloud" />
+    </a>
+  </div>
+</footer>

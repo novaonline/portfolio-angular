@@ -1,17 +1,50 @@
-
-
-.masked {
-    background: rgba(0, 0, 0, .80);
-    height: 100%;
-    width: 100%;
-    color: white;
-    position: fixed;
-    z-index: -1;
+body.dark-theme img {
+  filter: brightness(0.8) contrast(1.2);
 }
 
-.container {
-    color: white;
-    width: 100%;
+.scroll-on-overflow {
+  overflow-y: scroll;
 }
 
+.social-btn {
+  text-align: center;
+  cursor: pointer;
+  & img {
+    height: 3.2rem;
+    width: auto;
+  }
+  transition: all 400ms ease;
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+@mixin clearfix {
+  &:after {
+    display: table;
+    clear: both;
+    content: "";
+  }
+}
+
+.five-item-columns .social-btn {
+  float: left;
+  width: 20%;
+}
+
+.three-item-columns {
+  @include clearfix();
+}
+
+.five-item-columns {
+  @include clearfix();
+}
+
+@media (max-width: 801px) {
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
+  .three-item-columns-when-small .social-btn {
+    width: 33.3333%;
+    margin-top: 2%;
+  }
+}
 
